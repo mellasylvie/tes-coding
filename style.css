@@ -1,93 +1,158 @@
 body {
-      font-family: "Segoe UI", sans-serif;
-      background: linear-gradient(135deg, #f3e7ff, #fdfdfd);
-      text-align: center;
-      padding: 60px 20px;
-      overflow: hidden;
-      color: #333;
-    }
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #f3e7ff, #fdfdfd);
+  text-align: center;
+  padding: 40px 15px;
+  overflow-x: hidden;
+  color: #333;
+  font-size: 16px;
+}
 
-    .box {
-      background: #ffffff;
-      padding: 28px;
-      border-radius: 12px;
-      width: 360px;
-      margin: auto;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-      opacity: 0;
-      transform: translateY(15px);
-      transition: all 0.5s ease;
-    }
+/* BOX UMUM */
+.box {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 420px;
+  margin: auto;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.5s ease;
+}
 
-    .show {
-      opacity: 1;
-      transform: translateY(0);
-    }
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    h2 {
-      margin-bottom: 10px;
-      font-weight: 600;
-    }
+/* KHUSUS QUIZ (BIAR LEBIH LEBAR) */
+.quiz-box {
+  max-width: 520px;
+  width: 95%;
+}
 
-    p {
-      font-size: 14px;
-      line-height: 1.6;
-    }
+/* TEXT */
+h2 {
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 20px;
+}
 
-    input {
-      padding: 10px;
-      width: 85%;
-      margin-top: 10px;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      outline: none;
-    }
+p {
+  font-size: 15px;
+  line-height: 1.6;
+}
 
-    input:focus {
-      border-color: #b39ddb;
-    }
+/* INPUT */
+input {
+  padding: 10px;
+  width: 90%;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+  font-size: 15px;
+}
 
-    button {
-      margin: 8px;
-      padding: 9px 18px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 14px;
-      transition: 0.2s;
-    }
+input:focus {
+  border-color: #b39ddb;
+}
 
-    .btn-terima {
-      background: #9575cd;
-      color: white;
-    }
+/* BUTTON */
+button {
+  margin: 8px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
 
-    .btn-terima:hover {
-      background: #7e57c2;
-    }
+.btn-terima {
+  background: #9575cd;
+  color: white;
+}
 
-    .btn-tolak {
-      background: #ef5350;
-      color: white;
-      position: absolute;
-    }
-    .foto-doa {
-      width: 40%;
-      margin-top: 15px;
-    }
-    pre {
-      text-align: left;
-      background: #f7f7f7;
-      padding: 12px;
-      border-radius: 6px;
-      font-size: 13px;
-      overflow-x: auto;
-    }
+.btn-terima:hover {
+  background: #7e57c2;
+}
 
-    #result, #doaPage {
-      display: none;
-    }
+.btn-tolak {
+  background: #ef5350;
+  color: white;
+  position: fixed; /* penting biar kabur smooth */
+  z-index: 10;
+}
 
-    #doaPage p {
-      margin-top: 15px;
-    }
+/* CODE BLOCK */
+pre {
+  text-align: left;
+  background: #f7f7f7;
+  padding: 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  overflow-x: auto;
+}
+
+/* GAMBAR */
+.foto-doa {
+  width: 60%;
+  max-width: 220px;
+  margin-top: 15px;
+  border-radius: 10px;
+}
+
+/* SECTION */
+#result, #doaPage {
+  display: none;
+}
+
+#doaPage p {
+  margin-top: 15px;
+}
+
+/* 📱 RESPONSIVE HP */
+@media (max-width: 480px) {
+  body {
+    padding: 25px 10px;
+  }
+
+  .box {
+    padding: 20px;
+    max-width: 95%;
+  }
+
+  .quiz-box {
+    max-width: 100%;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 15px;
+  }
+
+  input {
+    font-size: 15px;
+  }
+
+  button {
+    width: 90%;
+    max-width: 260px;
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  pre {
+    font-size: 14px;
+  }
+
+  .foto-doa {
+    width: 75%;
+  }
+}
