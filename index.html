@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tebak Hayooo 😏</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- QUIZ -->
+    <div class="box show" id="quizBox">
+      <h2>🧠 Tes Programmer</h2>
+
+      <p>Apa output dari kode berikut?</p>
+      <pre>
+fun main() {
+    val a = 10
+    val b = "10"
+    println(a + b)
+}
+  </pre
+      >
+
+      <input type="text" id="answer" placeholder="Jawaban kamu..." />
+      <br />
+      <button onclick="cekJawaban()">Submit</button>
+
+      <p id="hint"></p>
+    </div>
+
+    <!-- RESULT -->
+    <div class="box" id="result">
+      <h2>🎉 Yay selamat Ulang Tahun🎉</h2>
+      <p>Cie udah 26 tahun nihhh 🥳</p>
+
+      <p>Yuk Lihat hadiah mu 😏</p>
+
+      <button class="btn-terima" onclick="terimaKado()">🎁 Lihat hadiah</button>
+      <button class="btn-tolak" id="tolakBtn">❌ TOLAK</button>
+    </div>
+
+    <!-- DOA -->
+    <div class="box" id="doaPage">
+      <h2>Barakallah Fii Umrik</h2>
+      <h2>Fauziii Teman Baikku</h2>
+
+      <img class="foto-doa" src="ujik_kecil.png" alt="" />
+      <p>
+        Semoga di umur 26 ini kamu selalu diberi kesehatan, panjang umur,
+        dimudahkan semua urusanmu, dilancarkan rezekinya, didekatkan jodohnya
+        dan semua impianmu satu per satu bisa tercapai ya.
+
+        <br /><br />
+        Semoga dengan bertambahnya umur, kamu semakin meningkat ibadahnya,
+        semakin bijaksana, semakin dewasa, semakin sukses, dan semakin bahagia.
+        Semoga kamu selalu dikelilingi oleh orang-orang yang menyayangimu dan
+        mendukungmu dalam setiap langkah hidupmu. Terima kasih telah hidup ya
+        kawand. Ku tau kedepannya pasti banyak tantangan yang akan datang.
+        Semoga fauzi bisa menjalaninya dengan baik. Selamat ulang tahun ya,
+        Fauzi! Semoga hari ini menjadi awal dari tahun yang penuh kebahagiaan,
+        kesuksesan, dan keberkahan untukmu. Aamiin.
+
+        <br /><br />
+        dari temanmu : mellaaaaa ....
+      </p>
+    </div>
+
+    <script>
+      let percobaan = 0;
+
+      function cekJawaban() {
+        percobaan++;
+        let hint = document.getElementById("hint");
+
+        hint.innerText = "checking...";
+
+        setTimeout(() => {
+          const pesan = [
+            "hmm kayanya ga itu deh jawabannya 🤔",
+            "coba lagi, hampir... 😆",
+            "masa gini aja salah sih, coba lagi hayo😏",
+          ];
+
+          if (percobaan < 3) {
+            hint.innerText = pesan[percobaan - 1];
+          } else {
+            document.getElementById("quizBox").classList.remove("show");
+
+            setTimeout(() => {
+              document.getElementById("quizBox").style.display = "none";
+              let result = document.getElementById("result");
+              result.style.display = "block";
+
+              setTimeout(() => {
+                result.classList.add("show");
+              }, 100);
+            }, 500);
+          }
+        }, 500);
+      }
+
+      // Tombol tolak kabur 😈
+      const tolakBtn = document.getElementById("tolakBtn");
+
+      tolakBtn.addEventListener("mouseover", () => {
+        let x = Math.random() * (window.innerWidth - 100);
+        let y = Math.random() * (window.innerHeight - 50);
+
+        tolakBtn.style.left = x + "px";
+        tolakBtn.style.top = y + "px";
+      });
+
+      function terimaKado() {
+        let result = document.getElementById("result");
+        result.classList.remove("show");
+
+        setTimeout(() => {
+          result.style.display = "none";
+
+          let doa = document.getElementById("doaPage");
+          doa.style.display = "block";
+
+          setTimeout(() => {
+            doa.classList.add("show");
+          }, 100);
+        }, 500);
+      }
+    </script>
+  </body>
+</html>
