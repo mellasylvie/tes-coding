@@ -11,10 +11,9 @@ body {
 /* BOX UMUM */
 .box {
   background: #ffffff;
-  padding: 24px;
+  padding: 15px;
   border-radius: 12px;
-  width: 100%;
-  max-width: 420px;
+  width: 90%;
   margin: auto;
   box-shadow: 0 8px 25px rgba(0,0,0,0.06);
   opacity: 0;
@@ -29,8 +28,7 @@ body {
 
 /* KHUSUS QUIZ (BIAR LEBIH LEBAR) */
 .quiz-box {
-  max-width: 520px;
-  width: 95%;
+  width: 100%;
 }
 
 /* TEXT */
@@ -48,7 +46,7 @@ p {
 /* INPUT */
 input {
   padding: 10px;
-  width: 90%;
+  width: 100%;
   margin-top: 10px;
   border: 1px solid #ddd;
   border-radius: 6px;
@@ -116,13 +114,8 @@ pre {
 
 /* 📱 RESPONSIVE HP */
 @media (max-width: 480px) {
-  body {
-    padding: 25px 10px;
-  }
-
   .box {
-    padding: 20px;
-    max-width: 95%;
+    width: 100%;
   }
 
   .quiz-box {
